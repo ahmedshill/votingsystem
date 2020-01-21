@@ -1,12 +1,12 @@
 <?php
 require 'db.php';
-
-$adm=$_SESSION['students']["admission"];
-$sql_check ="select * from checks where admission='$adm' and post='president' ";
-$results=mysqli_query($conn, $sql_check);
-if(mysqli_num_rows($results)==1)
-{
-    header("location:home.php");
+session_start();
+ $adm=$_SESSION['students']["admission"];
+ $sql_check ="select * from checks where admission='$adm' and post='president' ";
+ $results=mysqli_query($conn, $sql_check);
+ if(mysqli_num_rows($results)==1)
+ {
+     header("location:home.php");
 }
 
 ?>
@@ -48,16 +48,15 @@ require 'navbar.php';
           while ($row=mysqli_fetch_assoc($results)){
             extract($row);
             echo "<div class=\"col-sm-4\">
-                        <img src=\"photos/president-round-stamp-eps-vectors_csp27853230.jpg\" alt=\"\">
+                        <img src=\"photos/president3.jpg\" alt=\"\">
             
-                        <h4>$names</h4>
+                        <h4>$name</h4>
             
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"id\" value=\"$id\">Option 3</label>
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"id\" value=\"$id\">Option</label>
             
             
                    </div>";
-
-
+            
           }
         ?>
             <input type="submit" class="btn btn-block" name="submit">
@@ -72,7 +71,7 @@ require 'navbar.php';
 if(isset($_POST['submit']))
 {
     extract($_POST);
-    session_start();
+     session_start();
     $adm=$_SESSION['students']["admission"];
     $sql_check ="select * from checks where admission='$adm' and post='president' ";
     $results=mysqli_query($conn, $sql_check);

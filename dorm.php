@@ -49,7 +49,7 @@ require 'navbar.php';
             echo "<div class=\"col-sm-4\">
                         <img src=\"photos/vector-cartoon-illustration-small-dorm-450w-1060802036.jpg\" alt=\"\">
             
-                        <h4>$names</h4>
+                        <h4>$name</h4>
             
                         <label class=\"radio-inline\"><input type=\"radio\" name=\"id\" value=\"$id\">Option 3</label>
             

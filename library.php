@@ -51,12 +51,12 @@ require 'navbar.php';
         $results = mysqli_query($conn, $sql) or die(mysqli_error($conn));
         while ($row=mysqli_fetch_assoc($results)){
             extract($row);
-            echo "<div class=\"col-sm-4\">
-                        <img src=\"photos/photo-1529465230221-a0d10e46fcbb.jpg\" alt=\"\">
+            echo  "<div class=\"col-sm-4\">
+                        <img src=\"photos/president2.jpg\" alt=\"\">
             
-                        <h4>$names</h4>
+                        <h4>$name</h4>
             
-                        <label class=\"radio-inline\"><input type=\"radio\" name=\"id\" value=\"$id\">Option 3</label>
+                        <label class=\"radio-inline\"><input type=\"radio\" name=\"id\" value=\"$id\">Option </label>
             
             
                    </div>";

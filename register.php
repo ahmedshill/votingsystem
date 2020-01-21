@@ -6,7 +6,9 @@ if (isset($_POST["password"]))
     $password=crypt($password, "nvjnvjnvjnv");
     $sql="INSERT INTO `students`(`admission`, `email`, `password`) VALUES ('$admission' ,'$email','$password')";
     mysqli_query($conn, $sql);
-    header("location:login.php");
+
+    header("location:home.php");
+    echo "successfully registered";
 
 }
 ?>

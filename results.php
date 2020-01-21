@@ -1,5 +1,6 @@
 <?php
 require 'db.php';
+require 'security.php';
 
 if ($_SESSION["students"]["status"]!="admin")
 {
@@ -16,7 +17,7 @@ if ($_SESSION["students"]["status"]!="admin")
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Document</title>
         <link rel="stylesheet" href="bootstrap4/css/bootstrap.css">
-        <style>
+       <!-- <style>
             .col-sm-4 img{
                 width: 300px;
                 height: 200px;
@@ -28,7 +29,7 @@ if ($_SESSION["students"]["status"]!="admin")
                 background: black;
             }
 
-        </style>
+        </style>-->
     </head>
     <body>
     <?php
@@ -39,7 +40,7 @@ if ($_SESSION["students"]["status"]!="admin")
             <thead>
             <tr>
                 <th>ID</th>
-                <th>NAMES</th>
+                <th>NAME</th>
                 <th>POSITION</th>
                 <th>VOTE COUNT</th>
             </tr>
@@ -51,13 +52,13 @@ if ($_SESSION["students"]["status"]!="admin")
 
             <?php
 
-            $sql="SELECT candidates.id, candidates.names, candidates.position, votes.vote_count FROM candidates JOIN votes ON candidates.id = votes.candidate_id ORDER BY candidates.id";
+            $sql="SELECT candidates.id, candidates.name, candidates.position, votes.vote_count FROM candidates JOIN votes ON candidates.id = votes.candidate_id ORDER BY candidates.id";
             $results = mysqli_query($conn, $sql) or die(mysqli_error($conn));
             while ($row=mysqli_fetch_assoc($results)) {
                 extract($row);
                 echo "<tr>
                                 <td>$id</td>
-                                <td>$names</td>
+                                <td>$name</td>
                                 <td>$position</td>
                                 <td>$vote_count</td>
                      </tr>";

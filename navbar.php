@@ -16,16 +16,25 @@
             </li>
             <?php if ($_SESSION["students"]["status"]=="admin"):?>
             <li class="nav-item">
-                <a class="nav-link" href="results.php">Results</a>
+                <a class="nav-link" href="results.php">Results</a
+            </li>
+            <li class="nav-item">
+               <li class="nav-item">
+                <a class="nav-link" href="r egister.php">Register</a
+            </li>
             </li>
             <?php endif;?>
 
         </ul>
             <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
+                     <li class="nav-item">
                 <a class="nav-link " href="logout.php">Log out</a>
-            </li>
+                    </li>
+                <?php /*if ($_SESSION["students"]["names"])
+                    $names;
+                */?>
             </ul>
+
 
 
 

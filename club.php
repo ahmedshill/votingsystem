@@ -1,6 +1,6 @@
 <?php
 require 'db.php';
-
+session_start();
 $adm=$_SESSION['students']["admission"];
 $sql_check ="select * from checks where admission='$adm' and post='sport' ";
 $results=mysqli_query($conn, $sql_check);
@@ -51,7 +51,7 @@ require 'navbar.php';
             echo "<div class=\"col-sm-4\">
                         <img src=\"photos/sports.jpg\" alt=\"\">
             
-                        <h4>$names</h4>
+                        <h4>$name</h4>
             
                         <label class=\"radio-inline\"><input type=\"radio\" name=\"id\" value=\"$id\">Option 3</label>
             

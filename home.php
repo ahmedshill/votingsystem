@@ -1,4 +1,11 @@
 <?php
+require 'security.php';
+//if (isset($_SESSION['students']))
+//{
+//    die("Set");
+//}else{
+//    die("Not Set");
+//}
 require 'db.php';
 
 ?>
@@ -13,6 +20,11 @@ require 'db.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" media="screen and (max-device-width: 480px)" href="css/mobile.css" />
+    <script src="bootstrap-4.2/js/jquery.min.js"></script>
+    <script src="bootstrap-4.2/js/popper.min.js"></script>
+    <script src="bootstrap-4.2/js/bootstrap.min.js"></script>
+
     <style>
         .col-sm-6 a{
             width: 100%;
@@ -31,7 +43,26 @@ require 'db.php';
           }
         .col-sm-6{
             padding-top: 40px;
+            padding-bottom: 40px;
         }
+  /* @media screen and (max-width: 1000px){
+       .col-sm-6 {
+            width: 105%;
+           margin-left:1%;
+       }
+       .col-sm-6 img  {
+           width: 480px;
+           height: 300px;
+       }}
+    @media screen and (max-width:  2000px){
+
+        .col-sm-6 a{
+            width: 100%;
+        }
+
+    }
+*/
+
 
 
     </style>
@@ -53,7 +84,7 @@ require 'navbar.php';
                 tenetur voluptate. Corporis debitis deserunt dolores exercitationem, facere fuga fugiat incidunt optio
                 recusandae saepe.</p>-->
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6" >
             <img src="photos/photo-1529465230221-a0d10e46fcbb.jpg" alt="">
             <h4>Library</h4>
 
